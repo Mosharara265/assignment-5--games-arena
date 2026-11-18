@@ -1,0 +1,526 @@
+/*----global style-----*/
+body {
+    font-family: "Chakra Petch", sans-serif;
+    margin: 0px;
+    background-color: var(--second-color);
+}
+
+.box {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Days One", sans-serif;
+}
+
+:root {
+    --main-color: rgb(203, 254, 28);
+    --second-color: rgb(11, 14, 19);
+    --third-color: rgb(26, 26, 26);
+    --bg-sc-color: rgb(16, 24, 39);
+    --bg-th-color: rgb(30, 41, 57);
+}
+
+.color-main {
+    color: var(--main-color);
+}
+
+.color-sec {
+    color: var(--second-color);
+}
+
+.bg-main {
+    background-color: var(--main-color);
+}
+
+.bg-sec {
+    background-color: var(--second-color);
+}
+
+.bg-thaird {
+    background-color: var(--third-color);
+}
+
+.bg-sc-color {
+    background-color: var(--bg-sc-color);
+}
+
+.bg-th-color {
+    background-color: var(--bg-th-color);
+}
+
+.bg-form {
+    background-color: #364153;
+}
+
+html {
+    scroll-padding: 75px;
+}
+
+/*---header---*/
+header {
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(rgb(0, 0, 0, .9)), url(../images/hero-bg.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-size: 100%;
+    background-position: center;
+}
+
+.header-content .row .lift h1 {
+    font-size: 60px;
+}
+
+.header-content .row .lift p {
+    font-size: 17px;
+}
+
+.header-content .row .lift button {
+    font-size: 16px;
+}
+
+.header-content .row .lift .btn-right {
+    border: 2px solid var(--main-color);
+}
+
+.header-content .row .right .pp {
+    bottom: -3%;
+    left: -2%;
+}
+
+.header-content .row .right img {
+    border: 4px solid transparent;
+    background: linear-gradient(50deg, #111, #111) padding-box,
+        linear-gradient(to right, rgb(203, 254, 28), green) border-box;
+}
+
+header .btn:hover {
+    color: #000;
+    background-color: var(--main-color);
+}
+
+/*---nav---*/
+.navbar-nav .nav-link.active {
+    color: var(--main-color) !important;
+    font-weight: 900;
+}
+
+.navbar-nav .nav-link:hover {
+    color: rgb(203, 254, 28) !important;
+}
+
+.navbar-brand:focus,
+.navbar-brand:hover {
+    color: var(--main-color);
+}
+
+.btn-check:checked+.btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check)+.btn:active {
+    color: black;
+    background-color: var(--main-color);
+}
+
+nav .btn::after,
+header .btn::after,
+#Contact-Us .btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, color-mix(in oklab, var(--main-color, #2f3e01) 40%, transparent), rgba(12, 54, 0, 0.442));
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+nav .btn:hover::after,
+header .btn:hover:after,
+#Contact-Us .btn:hover:after {
+    transform: translateX(0);
+}
+
+nav .btn:hover {
+    color: var(--second-color);
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+nav .fa-regular:hover {
+    color: var(--main-color);
+}
+
+/*--OUR GAMES--*/
+.section-subtitle::before,
+.section-subtitle::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 70px;
+    height: 3px;
+}
+
+.section-subtitle::before {
+    left: 38%;
+    background: linear-gradient(to right, transparent, var(--main-color), var(--main-color));
+}
+
+.section-subtitle::after {
+    right: 38%;
+    background: linear-gradient(to left, transparent, var(--main-color), var(--main-color));
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    position: static;
+    width: 20px;
+    height: 20px;
+    font-size: larger;
+
+
+}
+
+#carouselExampleIndicators .btn {
+    border: 2px solid var(--main-color);
+    padding: 1rem !important;
+}
+
+.carousel-inner .container .game-card {
+    transition: border-color 0.3s ease;
+}
+
+.carousel-inner .container .game-card img {
+    transition: transform 0.4s ease;
+}
+
+.game-card::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(163, 230, 53, 0.95) 0%, rgba(163, 230, 53, 0.25) 50%, rgba(163, 230, 53, 0) 100%) !important;
+    transform: translateX(-100%);
+    transition: transform 0s ease;
+    z-index: 1;
+}
+
+.game-card:hover:before {
+    transform: translatey(0);
+}
+
+.carousel-inner .container .after {
+    top: -40px;
+    left: 41px;
+    transition: top 0.3s ease, opacity 0.3s ease;
+    z-index: 2;
+    opacity: 0;
+}
+
+.carousel-inner .container .before {
+    bottom: -50px;
+    left: 41px;
+    transition: bottom 0.3s ease, opacity 0.3s ease;
+    z-index: 2;
+    opacity: 0;
+}
+
+.carousel-inner .container .game-card:hover {
+    border: 2px solid var(--main-color);
+}
+
+.carousel-inner .container .game-card:hover::after {
+    opacity: 1;
+}
+
+.carousel-inner .container .game-card:hover img {
+    transform: scale(1.05);
+}
+
+.carousel-inner .container .game-card:hover .after {
+    top: 20px;
+    opacity: 1;
+}
+
+.carousel-inner .container .game-card:hover .before {
+    bottom: 20px;
+    opacity: 1;
+}
+
+.carousel-control-next i:hover,
+.carousel-control-prev i:hover {
+    color: var(--main-color) !important;
+    border-color: var(--main-color) !important;
+
+}
+#carouselExampleIndicators .btn{
+    transition:  background-color 0.3s ease ,color 0.3s ease;
+}
+#carouselExampleIndicators .btn:hover {
+    background-color: var(--main-color);
+    color: #000;
+}
+
+/*--What We Do--*/
+.what-do::after {
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #a4de02, transparent);
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0px 0px 15px 2px var(--main-color);
+}
+
+#What-We-Do .col-xl-3 {
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#What-We-Do .col-xl-3:hover .border-secondary {
+    border-color: var(--main-color) !important;
+}
+
+#What-We-Do .col-xl-3:hover .ico {
+    color: #000 !important;
+}
+
+#What-We-Do .col-xl-3 {
+    transition: background-color 0.3 ease;
+}
+
+#What-We-Do .col-xl-3:hover .bg-dark {
+    background-color: var(--main-color) !important;
+}
+
+.what-do-1 {
+    font-size: 60px;
+    transform: rotate(45deg);
+    top: -230px;
+    left: -265px;
+    transition: top 0.3s ease, left 0.3s ease;
+}
+
+#What-We-Do .col-xl-3:hover .what-do-1 {
+    top: -100px;
+    left: -135px;
+}
+
+.what-do-2 {
+    font-size: 60px;
+    transform: rotate(-135deg);
+    bottom: -230px;
+    right: -265px;
+    transition: bottom 0.3s ease, right 0.3s ease;
+}
+
+#What-We-Do .col-xl-3:hover .what-do-2 {
+    bottom: -100px;
+    right: -135px;
+}
+
+/*----mov----*/
+
+.svg-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.img-box {
+    width: 90px;
+    height: 90px;
+    border-radius: 16px;
+    overflow: hidden;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mov-track {
+    width: max-content;
+}
+
+.track-left {
+    animation: scrollLeft 35s linear infinite;
+}
+
+.track-right {
+    animation: scrollRight 35s linear infinite;
+}
+
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes scrollRight {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/*--our teams--*/
+.our-teams .our-team-1 {
+    left: 30px;
+    bottom: -5px;
+}
+
+.our-teams .our-team-2 {
+    right: -7px;
+    bottom: 27px;
+    transform: rotate(90deg);
+}
+
+.team-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 20, 25, 0.35);
+    backdrop-filter: grayscale(100%) brightness(100%);
+    -webkit-backdrop-filter: grayscale(100%) brightness(100%);
+    transition: height 0.45s ease;
+}
+
+.team-card:hover::after {
+    height: 0%;
+}
+
+/*---Contact Us---*/
+.Contact-Us .ContactUs i {
+    width: 13%;
+    height: 20%;
+    font-size: 30px;
+}
+
+.Contact-Us .ContactUs .ContactUs-1 {
+    background: linear-gradient(135deg, rgb(203, 254, 28), rgb(47, 252, 47));
+}
+
+.Contact-Us .ContactUs .ContactUs-1 i {
+    width: 9%;
+    font-size: 25px;
+}
+
+.form-control:focus,
+.form-select:focus,
+.form-control:focus {
+    color: #364153;
+    background-color: #364153;
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0;
+}
+
+.form form input,
+.form form select,
+.form form textarea {
+    color: rgb(255, 255, 255) !important;
+}
+
+.form form input::placeholder,
+.form form select::placeholder,
+.form form textarea::placeholder {
+    color: #a0aec0 !important;
+}
+
+.btn.btn-send::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #1b1b1bfa;
+    bottom: -40px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.Contact-Us .ContactUs .ContactUs-1 i:hover {
+    background-color: #2a2828 !important;
+}
+
+/*---footer---*/
+.foot::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: var(--bg-th-color);
+    bottom: -10px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+footer i:hover {
+    color: var(--main-color);
+}
+/*---media---*/
+@media screen and (max-width: 1399px){
+    .section-subtitle::before {
+    left: 36%;  
+    }
+    .section-subtitle::after {
+    right: 36%;
+    }
+}
+@media screen and (max-width: 1199px){
+    .section-subtitle::before {
+    left: 34%;  
+    }
+    .section-subtitle::after {
+    right: 34%;
+    }
+}
+@media screen and (max-width: 991px){
+    .section-subtitle::before {
+    left: 27%;  
+    }
+    .section-subtitle::after {
+    right: 27%;
+    }
+}
+@media screen and (max-width: 767px){
+    .section-subtitle::before {
+    left: 17%;  
+    }
+    .section-subtitle::after {
+    right: 17%;
+    }
+}
